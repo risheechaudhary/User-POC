@@ -1,0 +1,13 @@
+package com.poc.userpoc1;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Userpoc1ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
