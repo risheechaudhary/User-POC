@@ -48,12 +48,9 @@ public class UserServiceImpl implements UserService{
 //	}
 
 	@Override
-	public Iterable<User> softDeleteUserById(Long id) {
+	public Iterable<User> findAll() {
 		// TODO Auto-generated method stub
-		Session session = entityManager.unwrap(Session.class);
-		Filter filter = session.enableFilter("deletedProductFilter");
-		Iterable<User> user = userRepository.findAll();
-		session.disableFilter("deletedUserFilter");
-		return user;
+		return userRepository.findAll();
+		
 	}
 }

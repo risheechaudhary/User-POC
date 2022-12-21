@@ -9,5 +9,4 @@ class Userpoc1ApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

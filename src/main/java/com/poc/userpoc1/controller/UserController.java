@@ -24,7 +24,6 @@ import com.poc.userpoc1.entity.User;
 import com.poc.userpoc1.exception.UserNotFoundException;
 import com.poc.userpoc1.repository.UserRepository;
 import com.poc.userpoc1.service.UserService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Component
@@ -102,9 +101,9 @@ public class UserController {
 		return allUsers;
 	}
 	
-	@DeleteMapping("/soft-delete-user/{id}")
-	public Iterable<User> softDeleteUSerById(@PathVariable Long id) {
-		return userService.softDeleteUserById(id);
+	@GetMapping
+	public Iterable<User> findAll() {
+		return userService.findAll();
 	}
 	
 }

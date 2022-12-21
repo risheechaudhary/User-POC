@@ -24,5 +24,5 @@ public interface UserService  {
 //	}
 	List<User> findUserWithSorting(String field);
 	
-	Iterable<User> softDeleteUserById(Long id);
+	Iterable<User> findAll();
 }

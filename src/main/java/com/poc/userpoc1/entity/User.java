@@ -24,8 +24,8 @@ import lombok.NoArgsConstructor;
 
 //@FilterDef(name = "deletedUserFilter", parameters = @ParamDef(name = "isDeleted", type = "boolean"))
 //@Filter(name = "deletedUserFilter",condition="deleted= :isDeleted")
-@SQLDelete(sql = "update User set isDeleted = true where id = :id")
-@Where(clause = "isDeleted = false")
+@SQLDelete(sql = "update User set isDeleted = true where id = ?")
+//@Where(clause = "isDeleted = false")
 @Data
 @Entity
 @AllArgsConstructor
@@ -47,7 +47,7 @@ public class User {
 	
 	@NotNull
 	@Column(name="isdeleted")
-	private boolean isdeleted;
+	private boolean isdeleted = Boolean.FALSE;
 	
 	@NotNull
 	@Size(min = 8,message = "pass should be length of 8")
@@ -88,6 +88,14 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public boolean isIsdeleted() {
+		return isdeleted;
+	}
+
+	public void setIsdeleted(boolean isdeleted) {
+		this.isdeleted = isdeleted;
 	}
 
 	public String getPass() {
